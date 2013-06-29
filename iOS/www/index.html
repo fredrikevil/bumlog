@@ -2,8 +2,7 @@
 <html>
     <head>
         <title>TestFlightPG</title>
-        <script type="text/javascript" src="cordova-2.9.0.js"></script>
-        <script type="text/javascript" src="testflight.js"></script>
+        
         <script type="text/javascript">
             document.addEventListener('deviceready', onDeviceReady, false);
             function onDeviceReady() {
@@ -34,12 +33,161 @@
                                   }, name);
             }
             </script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+                <link href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" rel="stylesheet" />
+                <link href="js/ios_inspired/styles.css" rel="stylesheet" />
+                <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+                <script>
+                    // all dialog buttons should close their parent dialog
+                    $(".ui-dialog button").live("click", function() {
+                                                $("[data-role='dialog']").dialog("close");
+                                                });
+                    $(document).on("mobileinit", function(){
+                                   $.mobile.defaultPageTransition = "slide";
+                                   });
+                    </script>
+                <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+                <style>
+                    #footerTabs {
+                        background: #FFF -webkit-radial-gradient(circle, #FFF, #dee2e4);
+                    }
+                    .ui-listview sup {
+                        font-size: 0.6em;
+                        color: #cc0000;
+                    }
+                    </style>
+
+        
     </head>
-    <body>
-        <!--
-        <a onclick="doTrackLink('Awesome Feature 1')">Awesome Feature 1</a>
-        <br/><br/>
-        <a onclick="doTrackLink('Awesome Feature 2')">Awesome Feature 2</a>
-         -->
+    <body>           
+                <div data-role="page" id="mainPage">
+                    
+                    <div data-role="header" data-position="fixed">
+                        <h1>Bum Log</h1>
+                    </div><!-- /header -->
+                    
+                    <div data-role="content">
+                        <ul data-role="listview"  data-inset="true">
+                            <li><a href="#main-location" data-transition="slide">Location</a></li>
+                            <li><a href="#main-drinks" data-transition="slide">Drinks</a></li>
+                            <li><a href="#main-logs" data-transition="slide">Logs</a></li>
+                        </ul>
+                    </div><!-- /content -->                    
+                </div><!-- /page -->
+        
+        
+        
+        <div data-role="page" id="main-location">
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Location</h1>
+                <a href="#" data-rel="back" data-theme="a">Back</a>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#location-checkin" data-rel="dialog" data-transition="slideup">Kennedy's'</a></li>
+                    <li><a href="#location-checkin" data-rel="dialog" data-transition="slideup">Bar Corso</a></li>
+                    <li><a href="#location-checkin" data-rel="dialog" data-transition="slideup">Pimpernel</a></li>
+                    <li><a href="#location-checkin" data-rel="dialog" data-transition="slideup">Augustiner Bg</a></li>
+                    <li><a href="#location-checkin" data-rel="dialog" data-transition="slideup">Kilian's'</a></li>
+                    <li><a href="#location-checkin" data-rel="dialog" data-transition="slideup">Franz Josef</a></li>
+                    <li><a href="#location-checkin" data-rel="dialog" data-transition="slideup">Baal</a></li>
+                </ul>
+            </div><!-- /content -->            
+        </div><!-- /page -->
+        
+        
+        
+        
+        
+        
+        
+        <div data-role="page" id="main-drinks">
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Drinks</h1>
+                <a href="#" data-rel="back" data-theme="a">Back</a>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                <p>What are you drinking?</p>
+                
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#drink-beer" data-transition="slide">Beer</a></li>
+                    <li><a>Wine</a></li>
+                    <li><a>Cocktail</a></li>
+                    <li><a>Other</a></li>
+                </ul>
+            </div><!-- /content -->            
+        </div><!-- /page -->
+
+        
+        
+        <div data-role="page" id="main-logs">
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Logs</h1>
+                <a href="#" data-rel="back" data-theme="a">Back</a>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                <p>Time</p>
+                
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#drink-beer" data-transition="slide">Beer</a></li>
+                    <li><a>Wine</a></li>
+                    <li><a>Cocktail</a></li>
+                    <li><a>Other</a></li>
+                </ul>
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        
+        
+        
+        
+        <div data-role="page" id="drink-beer">
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Beer</h1>
+                <a href="#" data-rel="back" data-theme="a">Back</a>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                <p>Pick your beer</p>
+                
+                <div data-role="listview"  data-inset="true">
+                    <li><a href="#drink-beer-lager" data-transition="slide">Lager</a></li>
+                    <li><a>Ale</a></li>
+                    <li><a>Stout</a></li>
+
+                    <li><a>Other</a></li>
+                </div>
+            </div><!-- /content -->            
+        </div><!-- /page -->
+        
+        
+        
+        
+        
+        <div data-role="page" id="location-checkin">
+            <div data-role="content">
+                <div data-role="listview">
+                    <button data-theme="e">Check In</button>
+                </div>
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        
+        
+        
+        
+        
+        
+            </body>
+        </html>
     </body>
 </html>
